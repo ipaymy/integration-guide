@@ -1,5 +1,4 @@
-# integration-guide
-Integration Guide via OAuth 2
+# Integration Guide via OAuth 2
 
 ## Authorization
 
