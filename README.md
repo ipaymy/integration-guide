@@ -3,7 +3,7 @@ Integration Guide via OAuth 2
 
 ## Authorization
 
-1. First the user from your app will first open a link to `https://partner-dev-fe.ipaymy.com/app/authorize?client_id=A6F8A4F7-F9EA-459A-B219-0BB215D826C9&response_type=code&state=[your-state-id-here]`. A simple way to implement this is via an anchor element:
+1. First, the user from your app will open a link to `https://partner-dev-fe.ipaymy.com/app/authorize?client_id=A6F8A4F7-F9EA-459A-B219-0BB215D826C9&response_type=code&state=[your-state-id-here]`. A simple way to implement this is via an anchor element:
 ```html
 <a href="https://partner-dev-fe.ipaymy.com/app/authorize?client_id=A6F8A4F7-F9EA-459A-B219-0BB215D826C9&response_type=code&state=aGSZssdxSAdGHZH">Connect with iPaymy</a>
 ```
@@ -50,7 +50,7 @@ If successful, you should receive a json response:
 {
   "idempotency_key": "7AB09700-3110-11E8-BA5E-E908EC24792D",
   "payment_type": "payroll",
-  "currency": "SGD"
+  "currency": "SGD",
   "payees": [
     {
       "amount": 2000.40,
@@ -67,11 +67,11 @@ If successful, you should receive a json response:
 2. If it is successful, you will receive a response that includes a URL to redirect the user to in order to complete their payment.
 ```json
 {
-	"error": "0",
-	"message": {
-		"id": "efac849b-defc-4f54-b9f6-7a2e7f005098",
+  "error": "0",
+  "message": {
+    "id": "efac849b-defc-4f54-b9f6-7a2e7f005098",
     "redirect_url": "https://partner-dev-fe.ipaymy.com/payments/efac849b-defc-4f54-b9f6-7a2e7f005098",
-	}
+  }
 }
 ```
 On this page, the user will key in their credit card details securely, and iPaymy will calculate the license fee applicable for the credit card which the user keys in.
