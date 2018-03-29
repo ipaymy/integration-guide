@@ -49,10 +49,10 @@ If successful, you should receive a json response:
 {
   "idempotency_key": "7AB09700-3110-11E8-BA5E-E908EC24792D",
   "payment_type": "payroll",
-  "currency": "SGD",
   "payees": [
     {
       "amount": 2000.40,
+      "currency": "SGD",
       "recipient_name": "Andrew Goh",
       "comments": "SALARY FOR JULY 2018",
       "account_number": "1231123901",
