@@ -56,7 +56,8 @@ If successful, you should receive a json response:
       "recipient_name": "Andrew Goh",
       "comments": "SALARY FOR JULY 2018",
       "account_number": "1231123901",
-      "bank_name": "dbs"
+      "bank_name": "dbs",
+      "nric": "S71727162C"
     }
   ]
 }
