@@ -2,9 +2,9 @@
 
 ## Authorization
 
-1. First, the user from your app will open a link to `https://partner-dev-fe.ipaymy.com/app/authorize?client_id=A6F8A4F7-F9EA-459A-B219-0BB215D826C9&response_type=code&state=[your-state-id-here]`. A simple way to implement this is via an anchor element:
+1. First, the user from your app will open a link to `https://web.ipaymy.com/app/authorize?client_id=A6F8A4F7-F9EA-459A-B219-0BB215D826C9&response_type=code&state=[your-state-id-here]`. A simple way to implement this is via an anchor element:
 ```html
-<a href="https://partner-dev-fe.ipaymy.com/app/authorize?client_id=A6F8A4F7-F9EA-459A-B219-0BB215D826C9&response_type=code&state=aGSZssdxSAdGHZH">Connect with iPaymy</a>
+<a href="https://web.ipaymy.com/app/authorize?client_id=A6F8A4F7-F9EA-459A-B219-0BB215D826C9&response_type=code&state=aGSZssdxSAdGHZH">Connect with iPaymy</a>
 ```
 
 2. On this page, the user will be asked to log in to their iPaymy account, or create one. It will then ask the user to authorize your app to create payment requests on their behalf. The user will also select the company to associate with your app.
@@ -22,7 +22,7 @@ There are 3 query parameters:
 
 ## Token Exchange
 
-1. Make a `POST` request to `https://partner-api.ipaymy.com/api/v1.1/oauth/token` with json body:
+1. Make a `POST` request to `https://api.ipaymy.com/api/v1.1/oauth/token` with json body:
 ```json
 {
   "grant_type": "authorization_code",
@@ -44,7 +44,7 @@ If successful, you should receive a json response:
 
 ## Making Payment Requests
 
-1. Make a `POST` request to `https://partner-api.ipaymy.com/api/v1.1/companies/[company-id]/payment_requests` with header `Authorization: Bearer <YOUR_ACCESS_TOKEN>`, and json body:
+1. Make a `POST` request to `https://api.ipaymy.com/api/v1.1/companies/[company-id]/payment_requests` with header `Authorization: Bearer <YOUR_ACCESS_TOKEN>`, and json body:
 ```json
 {
   "idempotency_key": "7AB09700-3110-11E8-BA5E-E908EC24792D",
@@ -70,7 +70,7 @@ If successful, you should receive a json response:
   "error": "0",
   "message": {
     "id": "efac849b-defc-4f54-b9f6-7a2e7f005098",
-    "redirect_url": "https://partner-dev-fe.ipaymy.com/payments/efac849b-defc-4f54-b9f6-7a2e7f005098",
+    "redirect_url": "https://web.ipaymy.com/payments/efac849b-defc-4f54-b9f6-7a2e7f005098",
   }
 }
 ```
