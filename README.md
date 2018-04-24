@@ -63,6 +63,7 @@ If successful, you should receive a json response:
 }
 ```
 - the `idempotency_key` is a uuid string generated on your end so that you can retry the `POST` request with the same idempotency key, should it fail.
+- you may optionally pass an extra json key `state` which will be appended to the query string of the redirect url on a successful payment.
 
 2. If it is successful, you will receive a response that includes a URL to redirect the user to in order to complete their payment.
 ```json
